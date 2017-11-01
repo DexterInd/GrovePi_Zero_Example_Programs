@@ -34,8 +34,9 @@ import time
 from grovepi import *
 import math
 
-buzzer_pin = 2		#Port for buzzer
-switch_pin = 4		#Port for switch
+# Accelerometer goes on the I2C Port
+buzzer_pin = 3		#Port D3 for buzzer
+switch_pin = 0		#Port A0 for switch
 
 pinMode(buzzer_pin,"OUTPUT")	# Assign mode for buzzer as output
 pinMode(switch_pin,"INPUT")		# Assign mode for switch as input
@@ -52,7 +53,7 @@ while True:
 			else:	#Else stop the buzzer
 				digitalWrite(buzzer_pin,0)
 		else:		#If switch is in Off position, print "Off" on the screen
-			print("Off")	
+			print("Off")
 		time.sleep(.1)
 	except KeyboardInterrupt:	# Stop the buzzer before stopping
 		digitalWrite(buzzer_pin,0)
